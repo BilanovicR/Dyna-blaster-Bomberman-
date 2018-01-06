@@ -1,0 +1,9 @@
+wall.png
+32 32
+w 0 0
+grass2.png
+32 32
+g 0 0
+block.png
+32 32
+b 0 0

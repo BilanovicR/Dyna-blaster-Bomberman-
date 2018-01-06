@@ -1,0 +1,829 @@
+# depslib dependency file v1.0
+1511386026 source:d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\vezbe 19 i 20\igra\animatedsprite.cpp
+	"AnimatedSprite.h"
+
+1511385766 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\vezbe 19 i 20\igra\animatedsprite.h
+	<vector>
+	"Sprite.h"
+
+1513455962 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\vezbe 19 i 20\igra\sprite.h
+	<iostream>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_assert.h"
+	"SDL_atomic.h"
+	"SDL_audio.h"
+	"SDL_clipboard.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_filesystem.h"
+	"SDL_gamecontroller.h"
+	"SDL_haptic.h"
+	"SDL_hints.h"
+	"SDL_joystick.h"
+	"SDL_loadso.h"
+	"SDL_log.h"
+	"SDL_messagebox.h"
+	"SDL_mutex.h"
+	"SDL_power.h"
+	"SDL_render.h"
+	"SDL_rwops.h"
+	"SDL_shape.h"
+	"SDL_system.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_version.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<wchar.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<math.h>
+	<float.h>
+	<sal.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_config.h
+	"SDL_platform.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_platform.h
+	"AvailabilityMacros.h"
+	"TargetConditionals.h"
+	<winapifamily.h>
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\begin_code.h
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\close_code.h
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_assert.h
+	"SDL_config.h"
+	"begin_code.h"
+	<signal.h>
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_atomic.h
+	"SDL_stdinc.h"
+	"SDL_platform.h"
+	"begin_code.h"
+	<mbarrier.h>
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_endian.h
+	"SDL_stdinc.h"
+	<endian.h>
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_atomic.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	<process.h>
+	<stdlib.h>
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_clipboard.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	<intrin.h>
+	<intrin.h>
+	<altivec.h>
+	<mmintrin.h>
+	<mm3dnow.h>
+	<xmmintrin.h>
+	<emmintrin.h>
+	<pmmintrin.h>
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_gamecontroller.h"
+	"SDL_quit.h"
+	"SDL_gesture.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_pixels.h
+	"SDL_stdinc.h"
+	"SDL_endian.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_rect.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_pixels.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_surface.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_blendmode.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_blendmode.h
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keycode.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_keycode.h
+	"SDL_stdinc.h"
+	"SDL_scancode.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_scancode.h
+	"SDL_stdinc.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_gamecontroller.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_gesture.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_touch.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_filesystem.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_haptic.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_hints.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_log.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_messagebox.h
+	"SDL_stdinc.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_power.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_render.h
+	"SDL_stdinc.h"
+	"SDL_rect.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_shape.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_system.h
+	"SDL_stdinc.h"
+	"SDL_keyboard.h"
+	"SDL_render.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508769170 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\ruzica\sdl2\i686-w64-mingw32\include\sdl2\sdl_image.h
+	"SDL.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1513467680 source:d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\vezbe 19 i 20\igra\bat.cpp
+	"Bat.h"
+
+1513468154 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\vezbe 19 i 20\igra\bat.h
+	<cstdlib>
+	<ctime>
+	<cmath>
+	"AnimatedSprite.h"
+
+1513467980 source:d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\vezbe 19 i 20\igra\eingine.cpp
+	"Engine.h"
+
+1513465294 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\vezbe 19 i 20\igra\engine.h
+	<iostream>
+	<map>
+	<utility>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	"Sprite.h"
+	"AnimatedSprite.h"
+	"Tileset.h"
+	"Level.h"
+	"Bat.h"
+	"KeyEventHandler.h"
+
+1511926730 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\vezbe 19 i 20\igra\tileset.h
+	<iostream>
+	<fstream>
+	<map>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+
+1511926968 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\vezbe 19 i 20\igra\level.h
+	<iostream>
+	<SDL2/SDL.h>
+	<vector>
+	<utility>
+	"Tileset.h"
+
+1513453688 d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\vezbe 19 i 20\igra\keyeventhandler.h
+	<SDL2/SDL.h>
+	"Sprite.h"
+
+1512513230 source:d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\vezbe 19 i 20\igra\level.cpp
+	"Level.h"
+
+1511313548 source:d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\vezbe 19 i 20\igra\main.cpp
+	<iostream>
+	"Engine.h"
+
+1511385568 source:d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\vezbe 19 i 20\igra\sprite.cpp
+	"Sprite.h"
+
+1512510410 source:d:\ružica\singidunum\ii godina\oop 2 c++\vezbe\vezbe 19 i 20\igra\tileset.cpp
+	"Tileset.h"
+
+1515279659 source:d:\ružica\singidunum\ii godina\oop 2 c++\projekat\dyna\animatedsprite.cpp
+	"AnimatedSprite.h"
+
+1515279628 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\dyna\animatedsprite.h
+	<vector>
+	"Sprite.h"
+
+1515278976 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\dyna\sprite.h
+	<iostream>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<vector>
+
+1515014064 source:d:\ružica\singidunum\ii godina\oop 2 c++\projekat\dyna\bat.cpp
+	"Bat.h"
+
+1515014064 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\dyna\bat.h
+	<cstdlib>
+	<ctime>
+	<cmath>
+	"AnimatedSprite.h"
+
+1515265633 source:d:\ružica\singidunum\ii godina\oop 2 c++\projekat\dyna\eingine.cpp
+	"Engine.h"
+
+1515260777 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\dyna\engine.h
+	<iostream>
+	<map>
+	<utility>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	"Sprite.h"
+	"AnimatedSprite.h"
+	"Level.h"
+	"KeyEventHandler.h"
+	"Tile.h"
+
+1515021440 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\dyna\tileset.h
+	<iostream>
+	<fstream>
+	<map>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+
+1515272306 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\dyna\level.h
+	<iostream>
+	<fstream>
+	<SDL2/SDL.h>
+	<vector>
+	<utility>
+	"Tile.h"
+
+1515014064 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\dyna\keyeventhandler.h
+	<SDL2/SDL.h>
+	"Sprite.h"
+
+1515279023 source:d:\ružica\singidunum\ii godina\oop 2 c++\projekat\dyna\level.cpp
+	"Level.h"
+
+1511313548 source:d:\ružica\singidunum\ii godina\oop 2 c++\projekat\dyna\main.cpp
+	<iostream>
+	"Engine.h"
+
+1515265173 source:d:\ružica\singidunum\ii godina\oop 2 c++\projekat\dyna\sprite.cpp
+	"Sprite.h"
+
+1515021440 source:d:\ružica\singidunum\ii godina\oop 2 c++\projekat\dyna\tileset.cpp
+	"Tileset.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_assert.h"
+	"SDL_atomic.h"
+	"SDL_audio.h"
+	"SDL_clipboard.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_filesystem.h"
+	"SDL_gamecontroller.h"
+	"SDL_haptic.h"
+	"SDL_hints.h"
+	"SDL_joystick.h"
+	"SDL_loadso.h"
+	"SDL_log.h"
+	"SDL_messagebox.h"
+	"SDL_mutex.h"
+	"SDL_power.h"
+	"SDL_render.h"
+	"SDL_rwops.h"
+	"SDL_shape.h"
+	"SDL_system.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_version.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<wchar.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<math.h>
+	<float.h>
+	<sal.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_config.h
+	"SDL_platform.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_platform.h
+	"AvailabilityMacros.h"
+	"TargetConditionals.h"
+	<winapifamily.h>
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\begin_code.h
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\close_code.h
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_assert.h
+	"SDL_config.h"
+	"begin_code.h"
+	<signal.h>
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_atomic.h
+	"SDL_stdinc.h"
+	"SDL_platform.h"
+	"begin_code.h"
+	<mbarrier.h>
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_endian.h
+	"SDL_stdinc.h"
+	<endian.h>
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_atomic.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	<process.h>
+	<stdlib.h>
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_clipboard.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	<intrin.h>
+	<intrin.h>
+	<altivec.h>
+	<mmintrin.h>
+	<mm3dnow.h>
+	<xmmintrin.h>
+	<emmintrin.h>
+	<pmmintrin.h>
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_gamecontroller.h"
+	"SDL_quit.h"
+	"SDL_gesture.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_pixels.h
+	"SDL_stdinc.h"
+	"SDL_endian.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_rect.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_pixels.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_surface.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_blendmode.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_blendmode.h
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keycode.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_keycode.h
+	"SDL_stdinc.h"
+	"SDL_scancode.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_scancode.h
+	"SDL_stdinc.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_gamecontroller.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_gesture.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_touch.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_filesystem.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_haptic.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_hints.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_log.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_messagebox.h
+	"SDL_stdinc.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_power.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_render.h
+	"SDL_stdinc.h"
+	"SDL_rect.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_shape.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_system.h
+	"SDL_stdinc.h"
+	"SDL_keyboard.h"
+	"SDL_render.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508783382 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1508769170 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\sdl2\i686-w64-mingw32\include\sdl2\sdl_image.h
+	"SDL.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1515279481 d:\ružica\singidunum\ii godina\oop 2 c++\projekat\dyna\tile.h
+	<iostream>
+	<fstream>
+	<map>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+
+1515279532 source:d:\ružica\singidunum\ii godina\oop 2 c++\projekat\dyna\tile.cpp
+	"Tile.h"
+
+1515279736 source:d:\ružica\singidunum\ii godina\oop 2 c++\projekat\dyna\engine.cpp
+	"Engine.h"
+
