@@ -9,29 +9,27 @@
 
 #include "Sprite.h"
 #include "AnimatedSprite.h"
-//#include "Tileset.h"
+#include "Tileset.h"
 #include "Level.h"
-//#include "Bat.h"
+#include "Bat.h"
 #include "KeyEventHandler.h"
-#include "Tile.h"
 
 using namespace std;
 
-class Engine
-{
-public:
-    Engine();
-    Engine(const string &gameTitle);
-    void init();
-    bool run();
-    virtual ~Engine();
-private:
-    //16ms ~ 60FPS.
-    float frameRateCap = 16;
-    string gameTitle;
-    SDL_Window *window;
-    SDL_Renderer *renderer;
-    multimap<SDL_Keycode, KeyEventHandler*> observers;
+class Engine {
+    public:
+        Engine();
+        Engine(const string &gameTitle);
+        void init();
+        bool run();
+        virtual ~Engine();
+    private:
+        //16ms ~ 60FPS.
+        float frameRateCap = 16;
+        string gameTitle;
+        SDL_Window *window;
+        SDL_Renderer *renderer;
+        multimap<SDL_Keycode, KeyEventHandler*> observers;
 
 };
 

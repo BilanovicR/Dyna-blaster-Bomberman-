@@ -1,49 +1,56 @@
 #include "Level.h"
 
-Level::Level(string path, SDL_Renderer *renderer)
+Level::Level(const string &path,  SDL_Renderer *renderer)
 {
-    size_t width;
-    size_t height;
-    ifstream input;
-    int tileId;
-    Tile *t;
-
-    levelPath = path;
-    input.open(levelPath.c_str());
-    input >> width;
-    input >> height;
-
-    for(size_t i = 0; i < width; i++)
-    {
-        tileset.push_back(vector<Tile*>());
-        for(size_t j = 0; j < height; j++)
-        {
-            input >> tileId;
-            t = new Tile(tileId, renderer);
-            tileset[i].push_back(t);
-        };
-    }
+    //Nije lepo ni pametno resenje ali radi.
+    //Na sledecim vezbama ce ovo biti preuredjeno.
+    this->renderer = renderer;
+    ifstream input(path);
+    input >> (*this);
+    input.close();
 }
 
 void Level::draw(SDL_Renderer *renderer)
 {
-
-    for(size_t i = 0; i < tileset.size(); i++)
-    {
-        for(size_t j = 0; j < tileset[i].size(); j++)
-        {
-            SDL_Rect *dest = new SDL_Rect();
-            dest->x = j*(tileset[i][j]->tileWidth);
-            dest->y = i*(tileset[i][j]->tileHeight);
-            dest->w = tileset[i][j]->tileWidth;
-            dest->h = tileset[i][j]->tileHeight;
-
-            tileset[i][j]->drawTile(renderer, tileset[i][j]->texture, dest);
+    for(size_t i = 0; i < tiles.size(); i++) {
+        for(size_t j = 0; j < tiles[i].size(); j++) {
+            tileset->drawTile(tiles[i][j]->first, renderer, tiles[i][j]->second);
         }
     }
 }
 
 Level::~Level()
 {
-    tileset.clear();
+    //Kako da oslobodimo memoriju kolekcija?
+}
+
+
+ifstream &operator>>(ifstream &is, Level &level)
+{
+    string path;
+    is >> path;
+
+    level.tileset = new Tileset(path, level.renderer);
+
+    size_t width;
+    size_t height;
+    is >> width;
+    is >> height;
+
+    char tileId;
+    SDL_Rect *r;
+    Tile *t;
+
+    for(size_t i = 0; i < height; i++) {
+        level.tiles.push_back(vector<Tile*>());
+        for(size_t j = 0; j < width; j++) {
+            is >> tileId;
+            r = new SDL_Rect();
+            r->x = j * level.tileset->tileW();
+            r->y = i * level.tileset->tileH();
+            t = new Tile(tileId, r);
+            level.tiles[i].push_back(t);
+        }
+    }
+    return is;
 }

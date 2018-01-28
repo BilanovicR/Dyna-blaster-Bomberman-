@@ -9,26 +9,21 @@ Bat::Bat(SDL_Renderer *renderer) : AnimatedSprite("resources/creatures/bat.png",
 
 void Bat::setCurrentState(MoveState state)
 {
-    if((currentState == moveLeft)&&(state == moveDown))
-    {
+    if((currentState == moveLeft)&&(state == moveDown)) {
         currentState = moveDown;
     }
-    else if((currentState == moveDown)&&(state == moveRight))
-    {
+    else if((currentState == moveDown)&&(state == moveRight)) {
         currentState = moveRight;
     }
-    else if((currentState == moveRight)&&(state == moveUp))
-    {
+    else if((currentState == moveRight)&&(state == moveUp)) {
         currentState = moveUp;
     }
-    else if((currentState == moveUp)&&(state == spinMove))
-    {
+    else if((currentState == moveUp)&&(state == spinMove)) {
         currentState = spinMove;
         cx = spriteRect.x;
         cy = spriteRect.y;
     }
-    else if((currentState == spinMove)&&(state == moveLeft))
-    {
+    else if((currentState == spinMove)&&(state == moveLeft)) {
         currentState = moveLeft;
     }
 }
@@ -36,26 +31,21 @@ void Bat::setCurrentState(MoveState state)
 void Bat::nextState()
 {
     //Promena stanja spram trenutnog stanja
-    if(currentState == moveLeft)
-    {
+    if(currentState == moveLeft) {
         currentState = moveDown;
     }
-    else if(currentState == moveDown)
-    {
+    else if(currentState == moveDown) {
         currentState = moveRight;
     }
-    else if(currentState == moveRight)
-    {
+    else if(currentState == moveRight) {
         currentState = moveUp;
     }
-    else if(currentState == moveUp)
-    {
+    else if(currentState == moveUp) {
         currentState = spinMove;
         cx = spriteRect.x;
         cy = spriteRect.y;
     }
-    else if(currentState == spinMove)
-    {
+    else if(currentState == spinMove) {
         currentState = moveLeft;
     }
 }
@@ -92,14 +82,12 @@ void Bat::move(int dx, int dy)
 
     //Nasumicna promena stanja.
     moved += 1;
-    if((moved > 50)&&(currentState != spinMove))
-    {
+    if((moved > 50)&&(currentState != spinMove)) {
         if(rand()%4 == 1)
             nextState();
         moved = 0;
     }
-    else if((angle > 2*pi)&&(currentState == spinMove))
-    {
+    else if((angle > 2*pi)&&(currentState == spinMove)) {
         angle = 0;
         nextState();
     }

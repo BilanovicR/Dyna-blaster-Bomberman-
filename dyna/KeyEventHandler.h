@@ -5,8 +5,7 @@
 #include "Sprite.h"
 
 //Struktura koja cuva podatke o key handler-u.
-struct KeyEventHandler
-{
+struct KeyEventHandler {
     //Pokazivac na sprite.
     Sprite *sprite;
     SpriteFunction handler;

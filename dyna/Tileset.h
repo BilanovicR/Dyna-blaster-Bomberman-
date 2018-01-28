@@ -11,8 +11,8 @@ using namespace std;
 
 class Tileset {
     public:
-        Tileset(const string path, SDL_Renderer * const renderer);
-        void drawTile(const char tileId, SDL_Renderer * const renderer, SDL_Rect * const dest);
+        Tileset(const string &path, SDL_Renderer * const renderer);
+        void drawTile(const char &tileId, SDL_Renderer * const renderer, SDL_Rect * const dest);
         int tileW() {return tileWidth;};
         int tileH() {return tileHeight;};
         virtual ~Tileset();

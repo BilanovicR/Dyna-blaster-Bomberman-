@@ -10,8 +10,7 @@ Sprite::Sprite(const string &imagePath, SDL_Renderer * const renderer)
     spriteRect.w = surface->w;
     spriteRect.h = surface->h;
     //Kreiranje teksture.
-    spriteTexture = SDL_CreateTextureFromSurface(renderer, surface);
-
+    texture = SDL_CreateTextureFromSurface(renderer, surface);
     //Oslobadjanje prostora koji je zauzeo SDL_Surface objekat.
     SDL_FreeSurface(surface);
 }
@@ -22,7 +21,7 @@ void Sprite::draw(SDL_Renderer * const renderer)
     //Posto je spriteRect objekat a SDL_RenderCopy na tom mestu
     //ocekuje pokazivac koristimo operator & - adresa od da bismo
     //dobavili adresu objekta.
-    SDL_RenderCopy(renderer, spriteTexture, NULL, &spriteRect);
+    SDL_RenderCopy(renderer, texture, NULL, &spriteRect);
 }
 
 void Sprite::move(int dx, int dy)
@@ -35,5 +34,5 @@ Sprite::~Sprite()
 {
     //Implementacija destrkutora. U ovom slucaju destruktor
     //oslobadja prostor koji je zauzet za teksturu.
-    SDL_DestroyTexture(spriteTexture);
+    SDL_DestroyTexture(texture);
 }

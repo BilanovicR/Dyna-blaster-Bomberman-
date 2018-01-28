@@ -1,16 +1,16 @@
 #include "Tileset.h"
 
-Tileset::Tileset(const string path, SDL_Renderer * const renderer)
+Tileset::Tileset(const string &path, SDL_Renderer * const renderer)
 {
     tilesetPath = path;
 
     //Nije lepo ni pametno resenje ali radi.
     //Na sledecim vezbama ce ovo biti preuredjeno.
-    //ifstream input(path);
-    //input >> (*this);
-    //input.close();
+    ifstream input(path);
+    input >> (*this);
+    input.close();
 
-    SDL_Surface *surface = IMG_Load(path.c_str());
+    SDL_Surface *surface = IMG_Load(texturePath.c_str());
     textureWidth = surface->w;
     textureHeight = surface->h;
 
@@ -19,7 +19,7 @@ Tileset::Tileset(const string path, SDL_Renderer * const renderer)
     SDL_FreeSurface(surface);
 }
 
-void Tileset::drawTile(const char tileId, SDL_Renderer * const renderer, SDL_Rect * const dest)
+void Tileset::drawTile(const char &tileId, SDL_Renderer * const renderer, SDL_Rect * const dest)
 {
     dest->w = tileWidth;
     dest->h = tileHeight;

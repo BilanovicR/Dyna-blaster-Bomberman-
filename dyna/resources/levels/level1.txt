@@ -1,11 +1,13 @@
-10 10
-2 0 0 0 0 0 0 2 0 0
-0 1 0 1 0 1 0 1 0 1
-0 0 0 0 0 0 2 0 0 0
-0 1 0 1 0 1 0 1 0 1
-0 0 0 0 0 0 0 0 0 0
-0 1 0 1 0 1 0 1 0 1
-0 0 0 0 2 0 0 0 0 0
-0 1 0 1 0 1 0 1 0 1
-0 0 0 0 0 0 0 0 0 0
-0 1 0 1 0 1 0 1 0 1
+resources/tilesets/grass_tileset.txt
+32 32
+g g g g g g g g g g g
+g b g b g b g b g b g
+g g g g g g g g g g g
+g b g b g b g b g b g
+g g g g g g g g g g g
+g b g b g b g b g b g
+g g g g g g g g g g g
+g b g b g b g b g b g
+g g g g g g g g g g g
+g b g b g b g b g b g
+g g g g g g g g g g g
