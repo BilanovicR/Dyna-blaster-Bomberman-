@@ -5,7 +5,7 @@ using namespace std;
 
 int main(int argv, char** args)
 {
-    Engine *engine = new Engine("RPG game");
+    Engine *engine = new Engine("Dyna Blaster");
     engine->init();
     engine->run();
     delete engine;
