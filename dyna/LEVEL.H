@@ -19,7 +19,7 @@ class Level
 public:
     //friend class AnimatedSprite;
     //friend class Tile;
-    //friend int getIdFromMatrix(Level *levelWithTiles, int iMatrix, int jMatrix);
+    bool checkWalkableTile(int xMatrix, int yMatrix);
 
     Level(string levelPath, SDL_Renderer *renderer);
     string levelPath;

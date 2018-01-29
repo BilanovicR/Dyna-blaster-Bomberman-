@@ -12,7 +12,7 @@ using namespace std;
 class DynaAnimatedSprite : public AnimatedSprite {
 public:
     //int getIdFromMatrix(int iMatrix, int jMatrix);
-    uint32_t frameSkip = 5;
+    uint32_t frameSkip = 7;
     Tile *nextTile = NULL;
 
     DynaAnimatedSprite( SDL_Renderer * const renderer);

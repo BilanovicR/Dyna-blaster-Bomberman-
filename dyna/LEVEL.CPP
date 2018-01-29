@@ -41,17 +41,12 @@ Level::~Level()
     levelTiles.clear();
 }
 
-int getIdFromMatrix(Level *levelWithTiles, int iMatrix, int jMatrix){
-    int foundTile = NULL;
-for(size_t i = 0; i < levelWithTiles->levelMatrix.size(); i++)
-    {
-        for(size_t j = 0; j < levelWithTiles->levelMatrix[i].size(); j++)
-        {
-            if (i==iMatrix && j==jMatrix){
-                foundTile = levelWithTiles->levelMatrix[i][j];
-                }
-        }
-    }
-return foundTile;
+bool Level::checkWalkableTile(int iMatrix, int jMatrix){
+    int foundTile = this->levelMatrix[iMatrix][jMatrix];
+   // cout << this->levelTiles[foundTile]->walkable<< endl;
+    if (this->levelTiles[foundTile]->walkable == true){
+        return true;
+    } else return false;
+
 }
 

@@ -51,29 +51,56 @@ void DynaAnimatedSprite::draw(SDL_Renderer * const renderer)
     }
 }
 
-/*bool AnimatedSprite::checkCollision(Level *levelWithTiles, int dX, int dY) {
-    int i = (spriteRect.x + dX + spriteRect.w)/32;
-    int j = (spriteRect.y + dY + spriteRect.h)/32;
-    int idOfNextTile = getIdFromMatrix(levelWithTiles, i, j);
-    cout<<i<<endl;
-    cout<<j<<endl;
-}*/
+//bool AnimatedSprite::checkCollision(Level *levelWithTiles, int dX, int dY) {
+//
+//    int i = (spriteRect.x + dX + spriteRect.w)/32;
+//    int j = (spriteRect.y + dY + spriteRect.h)/32;
+//    int idOfNextTile = getIdFromMatrix(levelWithTiles, i, j);
+//    cout<<i<<endl;
+//    cout<<j<<endl;
+//
+//
+//
+//if (spriteRect.x < tile->x + tile->w &&
+//   spriteRect.x + spriteRect.w > tile->x &&
+//   spriteRect.y < tile->y + tile->h &&
+//   spriteRect.h + spriteRect.y > tile->y) {
+//    return true;
+//} else return false;
+//}
 
-void DynaAnimatedSprite::move(Level *levelWithTiles, int dX, int dY)
+void DynaAnimatedSprite::move(Level *level, int dX, int dY)
 {
-    /*int i = (spriteRect.x + dX + spriteRect.w)/32;
-    int j = (spriteRect.y + dY + spriteRect.h)/32;
-    int idOfNextTile = getIdFromMatrix(levelWithTiles, i, j);
-    cout<<i<<endl;
-    cout<<j<<endl;
+    int topLeftX = spriteRect.x + dX;
+    int topLeftY = spriteRect.y + dY;
+    int topLeftI = topLeftY/32;
+    int topLeftJ = topLeftX/32;
 
-    nextTile = levelWithTiles->levelTiles[idOfNextTile];
-        if (nextTile->walkable == true){*/
+    int topRightX = spriteRect.x + spriteRect.w + dX;
+    int topRightY = spriteRect.y + dY;
+    int topRightI = topRightY/32;
+    int topRightJ = topRightX/32;
 
-        if(currentState == stopState) {
-        Sprite::move(0, 0);
-    }
-    else {
-        Sprite::move(dX, dY);
-    }
+    int bottomLeftX = spriteRect.x + dX;
+    int bottomLeftY = spriteRect.y + spriteRect.h + dY;
+    int bottomLeftI = bottomLeftY/32;
+    int bottomLeftJ = bottomLeftX/32;
+
+
+    int bottomRightX = spriteRect.x + spriteRect.w + dX;
+    int bottomRightY = spriteRect.y + spriteRect.h + dY;
+    int bottomRightI = bottomRightY/32;
+    int bottomRightJ = bottomRightX/32;
+
+    if (level->checkWalkableTile(topLeftI, topLeftJ) && level->checkWalkableTile(bottomRightI, bottomRightJ)
+    && level->checkWalkableTile(topRightI, topRightJ) && level->checkWalkableTile(bottomLeftI, bottomLeftJ)){
+
+                if(currentState == stopState) {
+                Sprite::move(0, 0);
+                }
+                else {
+                    Sprite::move(dX, dY);
+                    }
+   }
 }
+

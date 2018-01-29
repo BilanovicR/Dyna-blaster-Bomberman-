@@ -64,19 +64,19 @@ bool Engine::run()
                 switch(event.key.keysym.sym) {
                     case SDLK_UP:
                         dyna->currentState = upState;
-                        dyna->move(l, 0, -2);
+                        dyna->move(l, 0, -3);
                     break;
                     case SDLK_DOWN:
                         dyna->currentState = downState;
-                        dyna->move(l, 0, 2);
+                        dyna->move(l, 0, 3);
                     break;
                     case SDLK_LEFT:
                         dyna->currentState = leftState;
-                        dyna->move(l, -2, 0);
+                        dyna->move(l, -3, 0);
                     break;
                     case SDLK_RIGHT:
                         dyna->currentState = rightState;
-                        dyna->move(l, 2, 0);
+                        dyna->move(l, 3, 0);
                     break;
                 }
                 break;
