@@ -14,7 +14,7 @@ void Engine::init()
     SDL_Init(SDL_INIT_VIDEO);
     IMG_Init(IMG_INIT_PNG);
     window = SDL_CreateWindow(gameTitle.c_str(), SDL_WINDOWPOS_UNDEFINED,
-                              SDL_WINDOWPOS_UNDEFINED, 320, 320, SDL_WINDOW_RESIZABLE);
+                              SDL_WINDOWPOS_UNDEFINED, 352, 352, SDL_WINDOW_RESIZABLE);
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 }
 
@@ -64,19 +64,19 @@ bool Engine::run()
                 switch(event.key.keysym.sym) {
                     case SDLK_UP:
                         dyna->currentState = upState;
-                        dyna->move(l, 0, -3);
+                        dyna->move(l, 0, -2);
                     break;
                     case SDLK_DOWN:
                         dyna->currentState = downState;
-                        dyna->move(l, 0, 3);
+                        dyna->move(l, 0, 2);
                     break;
                     case SDLK_LEFT:
                         dyna->currentState = leftState;
-                        dyna->move(l, -3, 0);
+                        dyna->move(l, -2, 0);
                     break;
                     case SDLK_RIGHT:
                         dyna->currentState = rightState;
-                        dyna->move(l, 3, 0);
+                        dyna->move(l, 2, 0);
                     break;
                 }
                 break;

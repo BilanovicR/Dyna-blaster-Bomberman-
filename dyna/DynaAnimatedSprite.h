@@ -18,6 +18,10 @@ public:
     DynaAnimatedSprite( SDL_Renderer * const renderer);
     void draw(SDL_Renderer * const renderer);
     void move(Level *l, int dx, int dy);
+    virtual void left(Level *l);
+    virtual void right(Level *l);
+    virtual void up(Level *l);
+    virtual void down(Level *l);
     //Tile getTile(int xTile, int yTile);
     //bool checkCollision(Level *levelWithTiles, int destinationX, int destinationY);
 

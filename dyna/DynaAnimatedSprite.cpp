@@ -92,6 +92,9 @@ void DynaAnimatedSprite::move(Level *level, int dX, int dY)
     int bottomRightI = bottomRightY/32;
     int bottomRightJ = bottomRightX/32;
 
+   // provera da ne izadje iz okvira igre
+    if(!(topRightX < 30 || bottomRightY < 30 || topRightX >= 352 || bottomRightY >= 352)){
+
     if (level->checkWalkableTile(topLeftI, topLeftJ) && level->checkWalkableTile(bottomRightI, bottomRightJ)
     && level->checkWalkableTile(topRightI, topRightJ) && level->checkWalkableTile(bottomLeftI, bottomLeftJ)){
 
@@ -103,4 +106,21 @@ void DynaAnimatedSprite::move(Level *level, int dX, int dY)
                     }
    }
 }
+}
+void DynaAnimatedSprite::left(Level *l){
+        currentState = leftState;
+        move(l, -1, 0);
+        }
+void DynaAnimatedSprite::right(Level *l){
+        currentState = rightState;
+        move(l, 1, 0);
+        }
+void DynaAnimatedSprite::up(Level *l){
+        currentState = upState;
+        move(l, 0, -1);
+        }
+void DynaAnimatedSprite::down(Level *l){
+        currentState = downState;
+        move(l, 0, 1);
+        }
 

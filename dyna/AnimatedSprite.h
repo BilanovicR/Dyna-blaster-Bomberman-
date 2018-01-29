@@ -16,6 +16,11 @@ class AnimatedSprite : public Sprite {
         //Dalje u klasama naslednicama je moguce redefinisati ove metode.
         virtual void draw(SDL_Renderer * const renderer);
         virtual void move(int dx, int dy);
+        virtual void left(){move(-1, 0);};
+        virtual void right(){move(1, 0);};
+        virtual void up(){move(0, -1);};
+        virtual void down(){move(0, 1);};
+
         MoveStates currentState;
 
     protected:
