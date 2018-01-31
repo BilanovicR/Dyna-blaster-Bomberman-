@@ -14,8 +14,7 @@ using namespace std;
 typedef vector<Tile*> TypesOfTiles;
 
 
-class Level
-{
+class Level {
 public:
     //friend class AnimatedSprite;
     //friend class Tile;

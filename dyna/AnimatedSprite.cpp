@@ -6,10 +6,8 @@ AnimatedSprite::AnimatedSprite(const string &imagePath,
                                int frameWidth,
                                int frameHeight,
                                SDL_Renderer * const renderer) :
-                Sprite(imagePath, renderer)
-{
-   for(int i = 0; i < spriteRect.w / frameWidth; i++)
-    {
+    Sprite(imagePath, renderer) {
+    for(int i = 0; i < spriteRect.w / frameWidth; i++) {
         SDL_Rect frame;
         frame.h = frameHeight;
         frame.w = frameWidth;
@@ -23,8 +21,7 @@ AnimatedSprite::AnimatedSprite(const string &imagePath,
     spriteRect.h = frameHeight;
 }
 
-void AnimatedSprite::draw(SDL_Renderer * const renderer)
-{
+void AnimatedSprite::draw(SDL_Renderer * const renderer) {
 //   //Iscrtavanje trenutnog frame-a.
 //    SDL_RenderCopy(renderer, spriteTexture, &frames[currentFrame], &spriteRect);
 //    //frameSkip i frameCount omogucuju da se upravlja brzinom animacije
@@ -45,8 +42,7 @@ void AnimatedSprite::draw(SDL_Renderer * const renderer)
 
 }
 
-void AnimatedSprite::move(int dx, int dy)
-{
+void AnimatedSprite::move(int dx, int dy) {
     //Poziv metode move iz nadklase Sprite.
     Sprite::move(dx, dy);
 }

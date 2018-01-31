@@ -10,8 +10,7 @@
 using namespace std;
 
 
-class Tile
-{
+class Tile {
 public:
     Tile(SDL_Renderer * renderer, string tilePath, int tileId, bool walkable, bool destroyable);
 

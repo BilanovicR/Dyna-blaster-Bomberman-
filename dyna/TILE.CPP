@@ -1,7 +1,6 @@
 #include "Tile.h"
 
-Tile::Tile(SDL_Renderer * renderer, string tPath, int id, bool aWalkable, bool aDestroyable)
-{
+Tile::Tile(SDL_Renderer * renderer, string tPath, int id, bool aWalkable, bool aDestroyable) {
     tilePath = tPath;
     tileId = id;
     walkable = aWalkable;
@@ -20,8 +19,7 @@ Tile::Tile(SDL_Renderer * renderer, string tPath, int id, bool aWalkable, bool a
     SDL_FreeSurface(surface);
 }
 
-void Tile::drawTile(SDL_Renderer *renderer, int id, int destinationX, int destinationY)
-{
+void Tile::drawTile(SDL_Renderer *renderer, int id, int destinationX, int destinationY) {
     if (id > 2) texture = IMG_LoadTexture(renderer, "resources/tiles/wall.png");
     else tileId = id;
     SDL_Rect * dest = new SDL_Rect();

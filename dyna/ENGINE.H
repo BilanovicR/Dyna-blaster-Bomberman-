@@ -12,14 +12,13 @@
 #include "DynaAnimatedSprite.h"
 //#include "Tileset.h"
 #include "Level.h"
-//#include "Bat.h"
+#include "EnemyAnimatedSprite.h"
 #include "KeyEventHandler.h"
 #include "Tile.h"
 
 using namespace std;
 
-class Engine
-{
+class Engine {
 public:
     Engine();
     Engine(const string &gameTitle);

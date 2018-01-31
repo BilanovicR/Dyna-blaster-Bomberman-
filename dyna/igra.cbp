@@ -44,15 +44,19 @@
 		</Linker>
 		<Unit filename="AnimatedSprite.cpp" />
 		<Unit filename="AnimatedSprite.h" />
-		<Unit filename="Engine.cpp" />
-		<Unit filename="Engine.h" />
+		<Unit filename="DynaAnimatedSprite.cpp" />
+		<Unit filename="DynaAnimatedSprite.h" />
+		<Unit filename="ENGINE.CPP" />
+		<Unit filename="ENGINE.H" />
+		<Unit filename="EnemyAnimatedSprite.cpp" />
+		<Unit filename="EnemyAnimatedSprite.h" />
 		<Unit filename="KeyEventHandler.h" />
-		<Unit filename="Level.cpp" />
-		<Unit filename="Level.h" />
-		<Unit filename="Sprite.cpp" />
-		<Unit filename="Sprite.h" />
-		<Unit filename="Tile.cpp" />
-		<Unit filename="Tile.h" />
+		<Unit filename="LEVEL.CPP" />
+		<Unit filename="LEVEL.H" />
+		<Unit filename="SPRITE.CPP" />
+		<Unit filename="SPRITE.H" />
+		<Unit filename="TILE.CPP" />
+		<Unit filename="TILE.H" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

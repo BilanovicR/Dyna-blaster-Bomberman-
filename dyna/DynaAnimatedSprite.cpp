@@ -1,48 +1,40 @@
 #include "DynaAnimatedSprite.h"
 
 DynaAnimatedSprite::DynaAnimatedSprite(
-                               SDL_Renderer * const renderer)
-                                : AnimatedSprite("resources/creatures/dyna.png", 30, 30, renderer)
-{
-currentState = stopState;
+    SDL_Renderer * const renderer)
+    : AnimatedSprite("resources/creatures/dyna.png", 30, 30, renderer) {
+    currentState = stopState;
 }
 
-void DynaAnimatedSprite::draw(SDL_Renderer * const renderer)
-{
+void DynaAnimatedSprite::draw(SDL_Renderer * const renderer) {
     currentStateFrames.clear();
 
     if (currentState == stopState) {
-            currentStateFrames.push_back(frames[0]);
-            currentStateFrames.push_back(frames[0]);
-    }
-    else if (currentState == downState) {
-            currentStateFrames.push_back(frames[1]);
-            currentStateFrames.push_back(frames[2]);
-    }
-    else if (currentState == leftState) {
-            currentStateFrames.push_back(frames[6]);
-            currentStateFrames.push_back(frames[7]);
-            currentStateFrames.push_back(frames[8]);
-    }
-    else if (currentState == rightState) {
-            currentStateFrames.push_back(frames[3]);
-            currentStateFrames.push_back(frames[4]);
-            currentStateFrames.push_back(frames[5]);
-            }
-    else if (currentState == upState) {
+        currentStateFrames.push_back(frames[0]);
+        currentStateFrames.push_back(frames[0]);
+    } else if (currentState == downState) {
+        currentStateFrames.push_back(frames[1]);
+        currentStateFrames.push_back(frames[2]);
+    } else if (currentState == leftState) {
+        currentStateFrames.push_back(frames[6]);
+        currentStateFrames.push_back(frames[7]);
+        currentStateFrames.push_back(frames[8]);
+    } else if (currentState == rightState) {
+        currentStateFrames.push_back(frames[3]);
+        currentStateFrames.push_back(frames[4]);
+        currentStateFrames.push_back(frames[5]);
+    } else if (currentState == upState) {
 
-            currentStateFrames.push_back(frames[9]);
-            currentStateFrames.push_back(frames[10]);
-            currentStateFrames.push_back(frames[11]);
-            };
+        currentStateFrames.push_back(frames[9]);
+        currentStateFrames.push_back(frames[10]);
+        currentStateFrames.push_back(frames[11]);
+    };
 
     SDL_RenderCopy(renderer, spriteTexture, &currentStateFrames[currentFrame], &spriteRect);
     frameCount++;
-    if(frameCount > frameSkip)
-    {
+    if(frameCount > frameSkip) {
         currentFrame++;
-        if(currentFrame >= currentStateFrames.size())
-        {
+        if(currentFrame >= currentStateFrames.size()) {
             //Kada se premasi broj frame-ova u slici, vraca se na pocetni
             //frame i prelazi se na sledeci red frame-ova u slici.
             currentFrame = 0;
@@ -69,8 +61,7 @@ void DynaAnimatedSprite::draw(SDL_Renderer * const renderer)
 //} else return false;
 //}
 
-void DynaAnimatedSprite::move(Level *level, int dX, int dY)
-{
+void DynaAnimatedSprite::move(Level *level, int dX, int dY) {
     int topLeftX = spriteRect.x + dX;
     int topLeftY = spriteRect.y + dY;
     int topLeftI = topLeftY/32;
@@ -92,35 +83,34 @@ void DynaAnimatedSprite::move(Level *level, int dX, int dY)
     int bottomRightI = bottomRightY/32;
     int bottomRightJ = bottomRightX/32;
 
-   // provera da ne izadje iz okvira igre
-    if(!(topRightX < 30 || bottomRightY < 30 || topRightX >= 352 || bottomRightY >= 352)){
+    // provera da ne izadje iz okvira igre
+    if(!(topRightX < 30 || bottomRightY < 30 || topRightX >= 352 || bottomRightY >= 352)) {
 
-    if (level->checkWalkableTile(topLeftI, topLeftJ) && level->checkWalkableTile(bottomRightI, bottomRightJ)
-    && level->checkWalkableTile(topRightI, topRightJ) && level->checkWalkableTile(bottomLeftI, bottomLeftJ)){
+        if (level->checkWalkableTile(topLeftI, topLeftJ) && level->checkWalkableTile(bottomRightI, bottomRightJ)
+                && level->checkWalkableTile(topRightI, topRightJ) && level->checkWalkableTile(bottomLeftI, bottomLeftJ)) {
 
-                if(currentState == stopState) {
+            if(currentState == stopState) {
                 Sprite::move(0, 0);
-                }
-                else {
-                    Sprite::move(dX, dY);
-                    }
-   }
+            } else {
+                Sprite::move(dX, dY);
+            }
+        }
+    }
 }
+void DynaAnimatedSprite::left(Level *l) {
+    currentState = leftState;
+    move(l, -1, 0);
 }
-void DynaAnimatedSprite::left(Level *l){
-        currentState = leftState;
-        move(l, -1, 0);
-        }
-void DynaAnimatedSprite::right(Level *l){
-        currentState = rightState;
-        move(l, 1, 0);
-        }
-void DynaAnimatedSprite::up(Level *l){
-        currentState = upState;
-        move(l, 0, -1);
-        }
-void DynaAnimatedSprite::down(Level *l){
-        currentState = downState;
-        move(l, 0, 1);
-        }
+void DynaAnimatedSprite::right(Level *l) {
+    currentState = rightState;
+    move(l, 1, 0);
+}
+void DynaAnimatedSprite::up(Level *l) {
+    currentState = upState;
+    move(l, 0, -1);
+}
+void DynaAnimatedSprite::down(Level *l) {
+    currentState = downState;
+    move(l, 0, 1);
+}
 

@@ -8,8 +8,7 @@
 
 using namespace std;
 
-class Sprite
-{
+class Sprite {
 public:
     //Referenca na const string omogucuje da se konstruktoru prosledi
     //string literal. Konstantni pokazivac na SDL_Renderer.
@@ -19,37 +18,29 @@ public:
     virtual void draw(SDL_Renderer * const renderer);
     virtual void move(int dx, int dy);
 
-    virtual void left()
-    {
+    virtual void left() {
         move(-1, 0);
     };
-    virtual void right()
-    {
+    virtual void right() {
         move(1, 0);
     };
-    virtual void up()
-    {
+    virtual void up() {
         move(0, -1);
     };
-    virtual void down()
-    {
+    virtual void down() {
         move(0, 1);
     };
 
-    virtual int width()
-    {
+    virtual int width() {
         return spriteRect.w;
     };
-    virtual int height()
-    {
+    virtual int height() {
         return spriteRect.h;
     };
-    virtual void width(int w)
-    {
+    virtual void width(int w) {
         spriteRect.w = w;
     };
-    virtual void height(int h)
-    {
+    virtual void height(int h) {
         spriteRect.h = h;
     };
 

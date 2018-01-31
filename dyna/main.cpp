@@ -3,8 +3,7 @@
 
 using namespace std;
 
-int main(int argv, char** args)
-{
+int main(int argv, char** args) {
     Engine *engine = new Engine("Dyna Blaster");
     engine->init();
     engine->run();

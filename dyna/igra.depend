@@ -889,14 +889,14 @@
 1515851384 source:d:\ruica\singidunum\ii godina\oop 2 c++\projekat\dyna-blaster-bomberman-\dyna\tile.cpp
 	"Tile.h"
 
-1517096972 source:f:\projekat\dyna-blaster-bomberman-\dyna\animatedsprite.cpp
+1517421062 source:f:\projekat\dyna-blaster-bomberman-\dyna\animatedsprite.cpp
 	"AnimatedSprite.h"
 
-1517237518 f:\projekat\dyna-blaster-bomberman-\dyna\animatedsprite.h
+1517421062 f:\projekat\dyna-blaster-bomberman-\dyna\animatedsprite.h
 	<vector>
 	"Sprite.h"
 
-1517239694 f:\projekat\dyna-blaster-bomberman-\dyna\sprite.h
+1517421062 f:\projekat\dyna-blaster-bomberman-\dyna\sprite.h
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
@@ -1241,14 +1241,14 @@
 	"begin_code.h"
 	"close_code.h"
 
-1517072626 f:\projekat\dyna-blaster-bomberman-\dyna\tile.h
+1517419896 f:\projekat\dyna-blaster-bomberman-\dyna\tile.h
 	<iostream>
 	<fstream>
 	<map>
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 
-1517177170 f:\projekat\dyna-blaster-bomberman-\dyna\level.h
+1517419890 f:\projekat\dyna-blaster-bomberman-\dyna\level.h
 	<iostream>
 	<fstream>
 	<SDL2/SDL.h>
@@ -1256,10 +1256,10 @@
 	<utility>
 	"Tile.h"
 
-1517239602 source:f:\projekat\dyna-blaster-bomberman-\dyna\engine.cpp
+1517437544 source:f:\projekat\dyna-blaster-bomberman-\dyna\engine.cpp
 	"Engine.h"
 
-1517080756 f:\projekat\dyna-blaster-bomberman-\dyna\engine.h
+1517421062 f:\projekat\dyna-blaster-bomberman-\dyna\engine.h
 	<iostream>
 	<map>
 	<utility>
@@ -1269,24 +1269,25 @@
 	"AnimatedSprite.h"
 	"DynaAnimatedSprite.h"
 	"Level.h"
+	"EnemyAnimatedSprite.h"
 	"KeyEventHandler.h"
 	"Tile.h"
 
-1517239602 f:\projekat\dyna-blaster-bomberman-\dyna\keyeventhandler.h
+1517421062 f:\projekat\dyna-blaster-bomberman-\dyna\keyeventhandler.h
 	<SDL2/SDL.h>
 	"Sprite.h"
 
-1517185368 source:f:\projekat\dyna-blaster-bomberman-\dyna\level.cpp
+1517435158 source:f:\projekat\dyna-blaster-bomberman-\dyna\level.cpp
 	"Level.h"
 
-1515279792 source:f:\projekat\dyna-blaster-bomberman-\dyna\main.cpp
+1517419900 source:f:\projekat\dyna-blaster-bomberman-\dyna\main.cpp
 	<iostream>
 	"Engine.h"
 
-1515265174 source:f:\projekat\dyna-blaster-bomberman-\dyna\sprite.cpp
+1517421062 source:f:\projekat\dyna-blaster-bomberman-\dyna\sprite.cpp
 	"Sprite.h"
 
-1517076852 source:f:\projekat\dyna-blaster-bomberman-\dyna\tile.cpp
+1517419882 source:f:\projekat\dyna-blaster-bomberman-\dyna\tile.cpp
 	"Tile.h"
 
 1517239678 f:\projekat\dyna-blaster-bomberman-\dyna\dynaanimatedsprite.h
@@ -1296,6 +1297,16 @@
 	"Level.h"
 	"AnimatedSprite.h"
 
-1517239738 source:f:\projekat\dyna-blaster-bomberman-\dyna\dynaanimatedsprite.cpp
+1517421062 source:f:\projekat\dyna-blaster-bomberman-\dyna\dynaanimatedsprite.cpp
 	"DynaAnimatedSprite.h"
+
+1517440762 f:\projekat\dyna-blaster-bomberman-\dyna\enemyanimatedsprite.h
+	<cstdlib>
+	<ctime>
+	<cmath>
+	"AnimatedSprite.h"
+	"Level.h"
+
+1517439168 source:f:\projekat\dyna-blaster-bomberman-\dyna\enemyanimatedsprite.cpp
+	"EnemyAnimatedSprite.h"
 
