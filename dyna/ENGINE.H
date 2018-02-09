@@ -10,11 +10,11 @@
 #include "Sprite.h"
 #include "AnimatedSprite.h"
 #include "DynaAnimatedSprite.h"
-//#include "Tileset.h"
 #include "Level.h"
 #include "EnemyAnimatedSprite.h"
 #include "KeyEventHandler.h"
 #include "Tile.h"
+#include "Bomb.h"
 
 using namespace std;
 
@@ -26,7 +26,6 @@ public:
     bool run();
     virtual ~Engine();
 private:
-    //16ms ~ 60FPS.
     float frameRateCap = 16;
     string gameTitle;
     SDL_Window *window;

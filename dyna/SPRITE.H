@@ -47,7 +47,6 @@ public:
     //Virtualni destruktor omogucuje da se destruktor
     //pozove iz klasa naslednica.
     virtual ~Sprite();
-protected:
     vector<SDL_Rect> frames;
     SDL_Rect spriteRect;
     SDL_Texture *spriteTexture;

@@ -22,16 +22,13 @@ bool Engine::run() {
     Level *l = new Level("resources/levels/level1.txt", renderer);
     if (l == NULL) cout << "greska pri pravljenju levela" << endl ;
 
-//    observers.insert(std::make_pair(SDLK_LEFT, new KeyEventHandler(dyna, &Sprite::left)));
-//    observers.insert(std::make_pair(SDLK_RIGHT, new KeyEventHandler(dyna, &Sprite::right)));
-//    observers.insert(std::make_pair(SDLK_UP, new KeyEventHandler(dyna, &Sprite::up)));
-//    observers.insert(std::make_pair(SDLK_DOWN, new KeyEventHandler(dyna, &Sprite::down)));
-
+    vector<Bomb*> bombs;
+    int counter = 0;
     bool running = true;
     SDL_Event event;
     uint32_t frameStart = 0;
     uint32_t frameEnd = 0;
-    while(running) {
+    while(counter < 50) {
         frameStart = SDL_GetTicks();
         //SDL_PollEvent vadi dogadjaje iz reda cekanja.
         //Izmedju dva ciklusa obrade dogadjaja moze se nakupiti
@@ -43,32 +40,26 @@ bool Engine::run() {
                 running = false;
                 break;
             case SDL_KEYDOWN:
-                //Obrada dogadjaja se vrsi bez dodatnih uslova, odnosno
-                //svi obradjivaci koji su se pertplatili na dogadjaj ce ga obraditi.
-                if(observers.count(event.key.keysym.sym) > 0) {
-                    //Pravljenje iteratora za multimapu.
-                    pair<multimap<SDL_Keycode, KeyEventHandler*>::iterator, multimap<SDL_Keycode, KeyEventHandler*>::iterator> range = observers.equal_range(event.key.keysym.sym);
-                    for(multimap<SDL_Keycode, KeyEventHandler*>::iterator it = range.first; it != range.second; it++) {
-                        it->second->execute();
-                    }
-                }
-                //Prethodno resenje
                 switch(event.key.keysym.sym) {
                 case SDLK_UP:
-                    dyna->currentState = upState;
-                    dyna->move(l, 0, -2);
+                    //dyna->currentState = upState;
+                    dyna->up(l);
                     break;
                 case SDLK_DOWN:
-                    dyna->currentState = downState;
-                    dyna->move(l, 0, 2);
+                    //dyna->currentState = downState;
+                    dyna->down(l);
                     break;
                 case SDLK_LEFT:
-                    dyna->currentState = leftState;
-                    dyna->move(l, -2, 0);
+                    //dyna->currentState = leftState;
+                    dyna->left(l);
                     break;
                 case SDLK_RIGHT:
-                    dyna->currentState = rightState;
-                    dyna->move(l, 2, 0);
+                    //dyna->currentState = rightState;
+                    dyna->right(l);
+                    break;
+                case SDLK_SPACE:
+                    Bomb *b = new Bomb(renderer, dyna->spriteRect.x, dyna->spriteRect.y);
+                    bombs.push_back(b);
                     break;
                 }
                 break;
@@ -83,9 +74,18 @@ bool Engine::run() {
         //Iscrtavanje sprite-a.
         l->draw(renderer);
         dyna->draw(renderer);
-        dyna->move(l, 0, 0);
         enemy->draw(renderer);
         enemy->move(l, 0, 0);
+
+        if (bombs.size()!=0) {
+            for (int i =0; i<bombs.size(); i++) {
+                if (bombs[i]->expired) {
+                    bombs[i]->~Bomb();
+                    bombs.erase(bombs.begin());
+                    i--;
+                } else bombs[i]->draw(renderer);
+            }
+        }
 
         SDL_RenderPresent(renderer);
 
@@ -94,6 +94,11 @@ bool Engine::run() {
         //Ogranicavanje brzine iscrtavanja na frameRateCap FPS.
         if(frameEnd - frameStart < frameRateCap) {
             SDL_Delay(frameRateCap - (frameEnd - frameStart));
+        };
+        if(dyna->checkCollision(enemy->spriteRect)) {
+                dyna->currentState=deadState;
+            cout << "game over" << endl;
+            counter++;
         }
     }
     return true;

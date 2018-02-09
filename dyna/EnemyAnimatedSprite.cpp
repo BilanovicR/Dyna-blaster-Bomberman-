@@ -8,7 +8,7 @@ EnemyAnimatedSprite::EnemyAnimatedSprite(SDL_Renderer *renderer, uint32_t frameS
 }
 
 EnemyState EnemyAnimatedSprite::randomEnemyState(int i) {
-    cout << " random state broj " << i << endl;
+    //cout << " random state broj " << i << endl;
     switch(i) {
     case 0:
         currentEnemyState = moveUp;
@@ -60,7 +60,7 @@ void EnemyAnimatedSprite::move(Level *level, int dX, int dY) {
     } else randomEnemyState(rand()%4);
     //Nasumicna promena stanja.
     moved += 1;
-    if(moved > 32) {
+    if(moved > 31) {
         currentEnemyState = randomEnemyState(rand()%4);
         //cout << "move prosao if, novi state " << currentEnemyState << endl;
         moved = 0;

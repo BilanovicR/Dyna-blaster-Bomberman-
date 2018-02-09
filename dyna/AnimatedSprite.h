@@ -6,7 +6,7 @@
 
 using namespace std;
 
-enum MoveStates {leftState, rightState, upState, downState, stopState};
+
 class AnimatedSprite : public Sprite {
 public:
     uint32_t frameSkip = 4;
@@ -28,8 +28,6 @@ public:
     virtual void down() {
         move(0, 1);
     };
-
-    MoveStates currentState;
 
 protected:
     uint32_t frameCount = 0;

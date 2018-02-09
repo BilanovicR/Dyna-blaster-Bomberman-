@@ -37,7 +37,6 @@ Level::~Level() {
 
 bool Level::checkWalkableTile(int iMatrix, int jMatrix) {
     int foundTile = this->levelMatrix[iMatrix][jMatrix];
-    // cout << this->levelTiles[foundTile]->walkable<< endl;
     if (this->levelTiles[foundTile]->walkable == true) {
         return true;
     } else return false;
