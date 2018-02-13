@@ -20,8 +20,8 @@ Tile::Tile(SDL_Renderer * renderer, string tPath, int id, bool aWalkable, bool a
 }
 
 void Tile::drawTile(SDL_Renderer *renderer, int id, int destinationX, int destinationY) {
-    if (id > 2) texture = IMG_LoadTexture(renderer, "resources/tiles/wall.png");
-    else tileId = id;
+    //if (id > 2) texture = IMG_LoadTexture(renderer, "resources/tiles/wall.png");
+   // else tileId = id;
     SDL_Rect * dest = new SDL_Rect();
     dest->x = destinationX * rect->h;
     dest->y = destinationY * rect->w;

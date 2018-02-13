@@ -17,7 +17,7 @@ Level::Level(string path, SDL_Renderer *renderer) {
     };
 
     levelTiles.push_back(new Tile(renderer, "resources/tiles/block.png", 0, false, false));
-    levelTiles.push_back(new Tile(renderer, "resources/tiles/grass.png", 1, true, false));
+    levelTiles.push_back(new Tile(renderer, "resources/tiles/grass.png", 1, true, true));
     levelTiles.push_back(new Tile(renderer, "resources/tiles/wall.png", 2, false, true));
     levelTiles.push_back(new Tile(renderer, "resources/tiles/door.png", 3, true, true));
 }
@@ -37,10 +37,19 @@ Level::~Level() {
 
 bool Level::checkWalkableTile(int iMatrix, int jMatrix) {
     int foundTile = this->levelMatrix[iMatrix][jMatrix];
-    // cout << this->levelTiles[foundTile]->walkable<< endl;
     if (this->levelTiles[foundTile]->walkable == true) {
         return true;
     } else return false;
 
 }
+
+bool Level::checkDestroyableTile(int iMatrix, int jMatrix) {
+    int foundTile = this->levelMatrix[iMatrix][jMatrix];
+    if (this->levelTiles[foundTile]->destroyable == true) {
+        return true;
+    } else return false;
+
+}
+
+
 

@@ -8,7 +8,7 @@ EnemyAnimatedSprite::EnemyAnimatedSprite(SDL_Renderer *renderer, uint32_t frameS
 }
 
 EnemyState EnemyAnimatedSprite::randomEnemyState(int i) {
-    cout << " random state broj " << i << endl;
+    //cout << " random state broj " << i << endl;
     switch(i) {
     case 0:
         currentEnemyState = moveUp;
@@ -46,9 +46,9 @@ void EnemyAnimatedSprite::draw(SDL_Renderer * const renderer) {
     }
 }
 
-void EnemyAnimatedSprite::move(Level *level, int dX, int dY) {
+void EnemyAnimatedSprite::move(Level *level, vector<Bomb*> b, int dX, int dY) {
 
-
+    if (!checkBombCollision(b)) {
     if(currentEnemyState == moveLeft) {
         if (canImove(level, -1, 0)) AnimatedSprite::left();
     } else if(currentEnemyState == moveRight) {
@@ -58,9 +58,10 @@ void EnemyAnimatedSprite::move(Level *level, int dX, int dY) {
     } else if(currentEnemyState == moveDown) {
         if (canImove(level, 0, 1)) AnimatedSprite::down();
     } else randomEnemyState(rand()%4);
+    }
     //Nasumicna promena stanja.
     moved += 1;
-    if(moved > 32) {
+    if(moved > 31) {
         currentEnemyState = randomEnemyState(rand()%4);
         //cout << "move prosao if, novi state " << currentEnemyState << endl;
         moved = 0;
@@ -101,5 +102,13 @@ bool EnemyAnimatedSprite::canImove(Level *level, int dX, int dY) {
 
 EnemyAnimatedSprite::~EnemyAnimatedSprite() {
 
+}
+
+bool EnemyAnimatedSprite::checkBombCollision(vector<Bomb*> bombs){
+    bool collision = false;
+    for (int i=0; i<bombs.size(); i++){
+            if (AnimatedSprite::checkCollision(bombs[i]->bombRect)) collision = true;
+    };
+    return collision;
 }
 

@@ -16,9 +16,9 @@ typedef vector<Tile*> TypesOfTiles;
 
 class Level {
 public:
-    //friend class AnimatedSprite;
-    //friend class Tile;
+
     bool checkWalkableTile(int xMatrix, int yMatrix);
+    bool checkDestroyableTile(int xMatrix, int yMatrix);
 
     Level(string levelPath, SDL_Renderer *renderer);
     string levelPath;
@@ -30,8 +30,6 @@ public:
     vector<vector<int>> levelMatrix;
 
     SDL_Renderer *renderer;
-    //Tile* getTile(int x, int y);
-
 };
 
 

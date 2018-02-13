@@ -2,13 +2,12 @@
 
 DynaAnimatedSprite::DynaAnimatedSprite(
     SDL_Renderer * const renderer)
-    : AnimatedSprite("resources/creatures/dyna.png", 30, 30, renderer) {
+    : AnimatedSprite("resources/creatures/9.png", 30, 30, renderer) {
     currentState = stopState;
 }
 
 void DynaAnimatedSprite::draw(SDL_Renderer * const renderer) {
     currentStateFrames.clear();
-
     if (currentState == stopState) {
         currentStateFrames.push_back(frames[0]);
         currentStateFrames.push_back(frames[0]);
@@ -24,10 +23,21 @@ void DynaAnimatedSprite::draw(SDL_Renderer * const renderer) {
         currentStateFrames.push_back(frames[4]);
         currentStateFrames.push_back(frames[5]);
     } else if (currentState == upState) {
-
         currentStateFrames.push_back(frames[9]);
         currentStateFrames.push_back(frames[10]);
         currentStateFrames.push_back(frames[11]);
+    } else if (currentState == deadState) {
+        currentStateFrames.push_back(frames[12]);
+        currentStateFrames.push_back(frames[13]);
+        currentStateFrames.push_back(frames[14]);
+        currentStateFrames.push_back(frames[15]);
+        currentStateFrames.push_back(frames[16]);
+        currentStateFrames.push_back(frames[17]);
+        currentStateFrames.push_back(frames[18]);
+        currentStateFrames.push_back(frames[19]);
+    } else if (currentState == winState){
+        currentStateFrames.push_back(frames[20]);
+        currentStateFrames.push_back(frames[21]);
     };
 
     SDL_RenderCopy(renderer, spriteTexture, &currentStateFrames[currentFrame], &spriteRect);
@@ -42,24 +52,6 @@ void DynaAnimatedSprite::draw(SDL_Renderer * const renderer) {
         frameCount = 0;
     }
 }
-
-//bool AnimatedSprite::checkCollision(Level *levelWithTiles, int dX, int dY) {
-//
-//    int i = (spriteRect.x + dX + spriteRect.w)/32;
-//    int j = (spriteRect.y + dY + spriteRect.h)/32;
-//    int idOfNextTile = getIdFromMatrix(levelWithTiles, i, j);
-//    cout<<i<<endl;
-//    cout<<j<<endl;
-//
-//
-//
-//if (spriteRect.x < tile->x + tile->w &&
-//   spriteRect.x + spriteRect.w > tile->x &&
-//   spriteRect.y < tile->y + tile->h &&
-//   spriteRect.h + spriteRect.y > tile->y) {
-//    return true;
-//} else return false;
-//}
 
 void DynaAnimatedSprite::move(Level *level, int dX, int dY) {
     int topLeftX = spriteRect.x + dX;
@@ -99,18 +91,21 @@ void DynaAnimatedSprite::move(Level *level, int dX, int dY) {
 }
 void DynaAnimatedSprite::left(Level *l) {
     currentState = leftState;
-    move(l, -1, 0);
+    move(l, -2, 0);
 }
 void DynaAnimatedSprite::right(Level *l) {
     currentState = rightState;
-    move(l, 1, 0);
+    move(l, 2, 0);
 }
 void DynaAnimatedSprite::up(Level *l) {
     currentState = upState;
-    move(l, 0, -1);
+    move(l, 0, -2);
 }
 void DynaAnimatedSprite::down(Level *l) {
     currentState = downState;
-    move(l, 0, 1);
+    move(l, 0, 2);
 }
+
+
+
 

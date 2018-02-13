@@ -22,23 +22,6 @@ AnimatedSprite::AnimatedSprite(const string &imagePath,
 }
 
 void AnimatedSprite::draw(SDL_Renderer * const renderer) {
-//   //Iscrtavanje trenutnog frame-a.
-//    SDL_RenderCopy(renderer, spriteTexture, &frames[currentFrame], &spriteRect);
-//    //frameSkip i frameCount omogucuju da se upravlja brzinom animacije
-//    //bez promene broja FPS-a citave aplikacije.
-//    frameCount++;
-//    if(frameCount > frameSkip)
-//    {
-//        //Prelazenje na sledeci frame.
-//        currentFrame++;
-//        if(currentFrame >= frames.size())
-//        {
-//            //Kada se premasi broj frame-ova u slici, vraca se na pocetni
-//            //frame i prelazi se na sledeci red frame-ova u slici.
-//            currentFrame = 0;
-//        }
-//        frameCount = 0;
-//    }
 
 }
 
@@ -46,3 +29,15 @@ void AnimatedSprite::move(int dx, int dy) {
     //Poziv metode move iz nadklase Sprite.
     Sprite::move(dx, dy);
 }
+
+bool AnimatedSprite::checkCollision(SDL_Rect r) {
+
+if (this->spriteRect.x < r.x + r.w &&
+   this->spriteRect.x + this->spriteRect.w > r.x &&
+   this->spriteRect.y < r.y + r.h &&
+   this->spriteRect.h + this->spriteRect.y > r.y) {
+       //cout<< "collision detected" << endl;
+    return true;
+} else return false;
+}
+

@@ -6,7 +6,7 @@
 
 using namespace std;
 
-enum MoveStates {leftState, rightState, upState, downState, stopState};
+
 class AnimatedSprite : public Sprite {
 public:
     uint32_t frameSkip = 4;
@@ -16,6 +16,7 @@ public:
     //Dalje u klasama naslednicama je moguce redefinisati ove metode.
     virtual void draw(SDL_Renderer * const renderer);
     virtual void move(int dx, int dy);
+    virtual bool checkCollision(SDL_Rect r);
     virtual void left() {
         move(-1, 0);
     };
@@ -28,8 +29,6 @@ public:
     virtual void down() {
         move(0, 1);
     };
-
-    MoveStates currentState;
 
 protected:
     uint32_t frameCount = 0;

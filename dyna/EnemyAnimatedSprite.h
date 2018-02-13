@@ -6,6 +6,7 @@
 #include <cmath>
 #include "AnimatedSprite.h"
 #include "Level.h"
+#include "Bomb.h"
 
 //constexpr double pi = atan(1)*4;
 //Enumeracija dozvoljenih stanja.
@@ -19,9 +20,11 @@ public:
     //Metoda za prelazak na sledece stanje.
     EnemyState randomEnemyState(int i);
     virtual void draw(SDL_Renderer * const renderer);
-    virtual void move(Level *l, int dx, int dy);
+    virtual void move(Level *l, vector<Bomb*> b, int dx, int dy);
     virtual ~EnemyAnimatedSprite();
+    //virtual bool checkCollision(SDL_Rect r);
     virtual bool canImove(Level *level, int dX, int dY);
+    virtual bool checkBombCollision(vector<Bomb*> bombs);
 protected:
     //double angle = 0;
     //int cx = 0;
