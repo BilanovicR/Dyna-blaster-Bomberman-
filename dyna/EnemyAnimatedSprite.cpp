@@ -49,16 +49,22 @@ void EnemyAnimatedSprite::draw(SDL_Renderer * const renderer) {
 void EnemyAnimatedSprite::move(Level *level, vector<Bomb*> b, int dX, int dY) {
 
     if (!checkBombCollision(b)) {
+//  if (!checkBombCollision(b)) {
     if(currentEnemyState == moveLeft) {
         if (canImove(level, -1, 0)) AnimatedSprite::left();
+        if (canImove(level,b, -1, 0)) AnimatedSprite::left();
     } else if(currentEnemyState == moveRight) {
         if (canImove(level, 1, 0)) AnimatedSprite::right();
+        if (canImove(level,b, 1, 0)) AnimatedSprite::right();
     } else if(currentEnemyState == moveUp) {
         if (canImove(level, 0, -1)) AnimatedSprite::up();
+        if (canImove(level,b, 0, -1)) AnimatedSprite::up();
     } else if(currentEnemyState == moveDown) {
         if (canImove(level, 0, 1)) AnimatedSprite::down();
+        if (canImove(level,b, 0, 1)) AnimatedSprite::down();
     } else randomEnemyState(rand()%4);
     }
+ //   }
     //Nasumicna promena stanja.
     moved += 1;
     if(moved > 31) {
@@ -69,6 +75,7 @@ void EnemyAnimatedSprite::move(Level *level, vector<Bomb*> b, int dX, int dY) {
 }
 
 bool EnemyAnimatedSprite::canImove(Level *level, int dX, int dY) {
+bool EnemyAnimatedSprite::canImove(Level *level,vector<Bomb*> b, int dX, int dY) {
     int topLeftX = spriteRect.x + dX;
     int topLeftY = spriteRect.y + dY;
     int topLeftI = topLeftY/32;
@@ -94,6 +101,7 @@ bool EnemyAnimatedSprite::canImove(Level *level, int dX, int dY) {
 
         if (level->checkWalkableTile(topLeftI, topLeftJ) && level->checkWalkableTile(bottomRightI, bottomRightJ)
                 && level->checkWalkableTile(topRightI, topRightJ) && level->checkWalkableTile(bottomLeftI, bottomLeftJ)) {
+                && level->checkWalkableTile(topRightI, topRightJ) && level->checkWalkableTile(bottomLeftI, bottomLeftJ) && !checkBombCollision(b)) {
             return true;
         }
     }

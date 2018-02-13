@@ -24,6 +24,7 @@ public:
     virtual ~EnemyAnimatedSprite();
     //virtual bool checkCollision(SDL_Rect r);
     virtual bool canImove(Level *level, int dX, int dY);
+    virtual bool canImove(Level *level,vector<Bomb*> b, int dX, int dY);
     virtual bool checkBombCollision(vector<Bomb*> bombs);
 protected:
     //double angle = 0;

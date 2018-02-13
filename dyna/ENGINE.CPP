@@ -81,6 +81,8 @@ bool Engine::run() {
             for (int i =0; i<bombs.size(); i++) {
                 if (!bombs[i]->ticking) {
                     bombs[i]->explode(l, renderer);
+                if (bombs[i]->ticking) bombs[i]->draw(renderer);
+                else bombs[i]->explode(l, renderer);
 
                 } else bombs[i]->draw(renderer);
                 if (bombs[i]->expired) {
