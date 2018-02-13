@@ -53,11 +53,6 @@ void DynaAnimatedSprite::draw(SDL_Renderer * const renderer) {
     }
 }
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 9f123de3eb2d7e56baa267ccc4906143a2791cb2
 void DynaAnimatedSprite::move(Level *level, int dX, int dY) {
     int topLeftX = spriteRect.x + dX;
     int topLeftY = spriteRect.y + dY;
@@ -109,32 +104,8 @@ void DynaAnimatedSprite::up(Level *l) {
 void DynaAnimatedSprite::down(Level *l) {
     currentState = downState;
     move(l, 0, 2);
-<<<<<<< HEAD
 }
 
 
-=======
-}
-
-bool DynaAnimatedSprite::checkCollision(SDL_Rect r) {
-
-if (this->spriteRect.x < r.x + r.w &&
-   this->spriteRect.x + this->spriteRect.w > r.x &&
-   this->spriteRect.y < r.y + r.h &&
-   this->spriteRect.h + this->spriteRect.y > r.y) {
-       //cout<< "collision detected" << endl;
-       //this->currentState = deadState;
-    return true;
-} else return false;
-}
-
-//bool DynaAnimatedSprite::checkBombCollision(vector<Bomb*> bombs){
-//    bool collision = false;
-//    for (int i=0; i<bombs.size(); i++){
-//            if (checkCollision(bombs[i].bombRect)) collision = true;
-//    };
-//    return collision;
-//}
->>>>>>> 9f123de3eb2d7e56baa267ccc4906143a2791cb2
 
 
