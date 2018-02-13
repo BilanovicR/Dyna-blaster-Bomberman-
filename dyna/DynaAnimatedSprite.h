@@ -7,7 +7,11 @@
 #include "Level.h"
 #include "AnimatedSprite.h"
 #include "EnemyAnimatedSprite.h"
+<<<<<<< HEAD
 //#include "Bomb.h"
+=======
+#include "Bomb.h"
+>>>>>>> 9f123de3eb2d7e56baa267ccc4906143a2791cb2
 
 
 using namespace std;
@@ -28,8 +32,13 @@ public:
     virtual void right(Level *l);
     virtual void up(Level *l);
     virtual void down(Level *l);
+<<<<<<< HEAD
     //virtual bool checkCollision(SDL_Rect r);
 
+=======
+    bool checkCollision(SDL_Rect r);
+    virtual bool checkBombCollision(vector<Bomb*> bombs){};
+>>>>>>> 9f123de3eb2d7e56baa267ccc4906143a2791cb2
     MoveStates currentState;
     vector<SDL_Rect> currentStateFrames;
     uint32_t frameCount = 0;

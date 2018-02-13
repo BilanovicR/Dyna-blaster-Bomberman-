@@ -90,6 +90,16 @@ bool Engine::run() {
             }
         }
 
+        if (bombs.size()!=0) {
+            for (int i =0; i<bombs.size(); i++) {
+                if (bombs[i]->expired) {
+                    bombs[i]->~Bomb();
+                    bombs.erase(bombs.begin());
+                    i--;
+                } else bombs[i]->draw(renderer);
+            }
+        }
+
         SDL_RenderPresent(renderer);
 
         frameEnd = SDL_GetTicks();
@@ -99,7 +109,11 @@ bool Engine::run() {
             SDL_Delay(frameRateCap - (frameEnd - frameStart));
         };
         if(dyna->checkCollision(enemy->spriteRect)) {
+<<<<<<< HEAD
             dyna->currentState=deadState;
+=======
+                dyna->currentState=deadState;
+>>>>>>> 9f123de3eb2d7e56baa267ccc4906143a2791cb2
             cout << "game over" << endl;
             counter++;
         }

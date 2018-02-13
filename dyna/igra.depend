@@ -1310,10 +1310,17 @@
 1517439168 source:f:\projekat\dyna-blaster-bomberman-\dyna\enemyanimatedsprite.cpp
 	"EnemyAnimatedSprite.h"
 
+<<<<<<< HEAD
 1518470922 source:d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\animatedsprite.cpp
 	"AnimatedSprite.h"
 
 1518470922 d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\animatedsprite.h
+=======
+1518034462 source:d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\animatedsprite.cpp
+	"AnimatedSprite.h"
+
+1518117501 d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\animatedsprite.h
+>>>>>>> 9f123de3eb2d7e56baa267ccc4906143a2791cb2
 	<vector>
 	"Sprite.h"
 
@@ -1323,16 +1330,27 @@
 	<SDL2/SDL_image.h>
 	<vector>
 
+<<<<<<< HEAD
 1518470922 source:d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\dynaanimatedsprite.cpp
 	"DynaAnimatedSprite.h"
 
 1518471157 d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\dynaanimatedsprite.h
+=======
+1518123310 source:d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\dynaanimatedsprite.cpp
+	"DynaAnimatedSprite.h"
+
+1518123343 d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\dynaanimatedsprite.h
+>>>>>>> 9f123de3eb2d7e56baa267ccc4906143a2791cb2
 	<vector>
 	"Sprite.h"
 	"Tile.h"
 	"Level.h"
 	"AnimatedSprite.h"
 	"EnemyAnimatedSprite.h"
+<<<<<<< HEAD
+=======
+	"Bomb.h"
+>>>>>>> 9f123de3eb2d7e56baa267ccc4906143a2791cb2
 
 1517866073 d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\tile.h
 	<iostream>
@@ -1341,7 +1359,11 @@
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 
+<<<<<<< HEAD
 1518476704 d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\level.h
+=======
+1518117523 d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\level.h
+>>>>>>> 9f123de3eb2d7e56baa267ccc4906143a2791cb2
 	<iostream>
 	<fstream>
 	<SDL2/SDL.h>
@@ -1349,18 +1371,30 @@
 	<utility>
 	"Tile.h"
 
+<<<<<<< HEAD
 1518471191 source:d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\enemyanimatedsprite.cpp
 	"EnemyAnimatedSprite.h"
 
 1518471157 d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\enemyanimatedsprite.h
+=======
+1518052210 source:d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\enemyanimatedsprite.cpp
+	"EnemyAnimatedSprite.h"
+
+1517956556 d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\enemyanimatedsprite.h
+>>>>>>> 9f123de3eb2d7e56baa267ccc4906143a2791cb2
 	<cstdlib>
 	<ctime>
 	<cmath>
 	"AnimatedSprite.h"
 	"Level.h"
+<<<<<<< HEAD
 	"Bomb.h"
 
 1518549303 source:d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\engine.cpp
+=======
+
+1518118549 source:d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\engine.cpp
+>>>>>>> 9f123de3eb2d7e56baa267ccc4906143a2791cb2
 	"Engine.h"
 
 1518048946 d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\engine.h
@@ -1382,7 +1416,11 @@
 	<SDL2/SDL.h>
 	"Sprite.h"
 
+<<<<<<< HEAD
 1518540968 source:d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\level.cpp
+=======
+1518118046 source:d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\level.cpp
+>>>>>>> 9f123de3eb2d7e56baa267ccc4906143a2791cb2
 	"Level.h"
 
 1517866073 source:d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\main.cpp
@@ -1392,7 +1430,11 @@
 1517866073 source:d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\sprite.cpp
 	"Sprite.h"
 
+<<<<<<< HEAD
 1518549527 source:d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\tile.cpp
+=======
+1517866073 source:d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\tile.cpp
+>>>>>>> 9f123de3eb2d7e56baa267ccc4906143a2791cb2
 	"Tile.h"
 
 1508786982 d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\sdl2\i686-w64-mingw32\include\sdl2\sdl.h
@@ -1734,13 +1776,24 @@
 	"begin_code.h"
 	"close_code.h"
 
+<<<<<<< HEAD
 1518549358 source:d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\bomb.cpp
 	"Bomb.h"
 
 1518547735 d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\bomb.h
+=======
+1518109538 source:d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\bomb.cpp
+	"Bomb.h"
+
+1518107977 d:\users\bilanovic\documents\github\dyna-blaster-bomberman-\dyna\bomb.h
+>>>>>>> 9f123de3eb2d7e56baa267ccc4906143a2791cb2
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<vector>
+<<<<<<< HEAD
 	"Level.h"
+=======
+	"DynaAnimatedSprite.h"
+>>>>>>> 9f123de3eb2d7e56baa267ccc4906143a2791cb2
 
