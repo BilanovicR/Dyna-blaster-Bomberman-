@@ -8,31 +8,24 @@
 #include "Level.h"
 #include "Bomb.h"
 
-//constexpr double pi = atan(1)*4;
+
 //Enumeracija dozvoljenih stanja.
 enum EnemyState {moveUp, moveLeft, moveDown, moveRight};
 
 class EnemyAnimatedSprite : public AnimatedSprite {
 public:
     EnemyAnimatedSprite(SDL_Renderer *renderer, uint32_t frameSkip);
-    //Metoda za postavljanje stanja,
-//    void setCurrentState(EnemyState state);
-    //Metoda za prelazak na sledece stanje.
-    EnemyState randomEnemyState(int i);
+    EnemyState randomEnemyState(int i);//Metoda za prelazak na sledece stanje.
     virtual void draw(SDL_Renderer * const renderer);
     virtual void move(Level *l, vector<Bomb*> b, int dx, int dy);
     virtual ~EnemyAnimatedSprite();
-    //virtual bool checkCollision(SDL_Rect r);
-    virtual bool canImove(Level *level, int dX, int dY);
-    virtual bool canImove(Level *level,vector<Bomb*> b, int dX, int dY);
-    virtual bool checkBombCollision(vector<Bomb*> bombs);
-protected:
-    //double angle = 0;
-    //int cx = 0;
-    //int cy = 0;
+    virtual bool canImove(Level *level,vector<Bomb*> b, int dX, int dY);//provera da li se enemy moze kretati po Tile-ovima i da li nema bombi da novoj poziciji
+    virtual bool checkBombCollision(vector<Bomb*> bombs);//
+
     uint32_t frameSkip = 0;
     int moved = 0;
     EnemyState currentEnemyState;
+    LifeState enemyLifeState;
 };
 
 #endif // BAT_H_INCLUDED

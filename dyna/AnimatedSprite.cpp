@@ -7,6 +7,7 @@ AnimatedSprite::AnimatedSprite(const string &imagePath,
                                int frameHeight,
                                SDL_Renderer * const renderer) :
     Sprite(imagePath, renderer) {
+        //isecanje svake slicice na osnovu sirine sprite-a i dodavanje u vektor sa frejmovima
     for(int i = 0; i < spriteRect.w / frameWidth; i++) {
         SDL_Rect frame;
         frame.h = frameHeight;
@@ -31,13 +32,17 @@ void AnimatedSprite::move(int dx, int dy) {
 }
 
 bool AnimatedSprite::checkCollision(SDL_Rect r) {
-
+//provera za sprite da li je u kontaktu sa prosledjenim rectom r
 if (this->spriteRect.x < r.x + r.w &&
    this->spriteRect.x + this->spriteRect.w > r.x &&
    this->spriteRect.y < r.y + r.h &&
    this->spriteRect.h + this->spriteRect.y > r.y) {
-       //cout<< "collision detected" << endl;
     return true;
 } else return false;
+}
+
+AnimatedSprite::~AnimatedSprite(){
+    SDL_DestroyTexture(spriteTexture);
+
 }
 

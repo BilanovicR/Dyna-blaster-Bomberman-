@@ -23,12 +23,13 @@ bool Engine::run() {
     if (l == NULL) cout << "greska pri pravljenju levela" << endl ;
 
     vector<Bomb*> bombs;
-    int counter = 0;
+    vector<EnemyAnimatedSprite*> enemies;
+    enemies.push_back(enemy);
     bool running = true;
     SDL_Event event;
     uint32_t frameStart = 0;
     uint32_t frameEnd = 0;
-    while(counter < 50) {
+    while(dyna->lifeState != dead) {
         frameStart = SDL_GetTicks();
         //SDL_PollEvent vadi dogadjaje iz reda cekanja.
         //Izmedju dva ciklusa obrade dogadjaja moze se nakupiti
@@ -42,22 +43,18 @@ bool Engine::run() {
             case SDL_KEYDOWN:
                 switch(event.key.keysym.sym) {
                 case SDLK_UP:
-                    //dyna->currentState = upState;
                     dyna->up(l);
                     break;
                 case SDLK_DOWN:
-                    //dyna->currentState = downState;
                     dyna->down(l);
                     break;
                 case SDLK_LEFT:
-                    //dyna->currentState = leftState;
                     dyna->left(l);
                     break;
                 case SDLK_RIGHT:
-                    //dyna->currentState = rightState;
                     dyna->right(l);
                     break;
-                case SDLK_SPACE:
+                case SDLK_SPACE://pravljenje nove bombe i dodavanje u vektor
                     Bomb *b = new Bomb(renderer, dyna->spriteRect.x, dyna->spriteRect.y);
                     bombs.push_back(b);
                     break;
@@ -71,21 +68,47 @@ bool Engine::run() {
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
 
-        //Iscrtavanje sprite-a.
+        //Iscrtavanje levela.
         l->draw(renderer);
-        dyna->draw(renderer);
-        enemy->draw(renderer);
-        enemy->move(l, bombs, 0, 0);
+        if (dyna->lifeState != dead) dyna->draw(renderer);
+
+        if (enemies.size()!= 0) {
+            for (int i = 0; i <enemies.size(); i++) {
+                if (enemies[i]->enemyLifeState != dead) { //provera za svaki enemy da se iscrtava dok je u zivotu
+                    enemies[i]->draw(renderer);
+                    enemies[i]->move(l, bombs, 0, 0);
+                } else if (enemies[i]->enemyLifeState == dead) { //ukoliko mu je stanje = dead onda se brise iz memorije i vektora
+                    delete enemies[i];
+                    enemies.erase(enemies.begin());
+                    i--;
+                }
+            }
+        };
 
         if (bombs.size()!=0) {
             for (int i =0; i<bombs.size(); i++) {
-                if (!bombs[i]->ticking) {
-                    bombs[i]->explode(l, renderer);
-                if (bombs[i]->ticking) bombs[i]->draw(renderer);
-                else bombs[i]->explode(l, renderer);
+                if (bombs[i]->ticking) bombs[i]->draw(renderer);//aka bomba dok otkucava se iscrtava
+                else {
+                    bombs[i]->explode(l, renderer); // u slucaju eksplozije provera da li je dodirnula dinu sa bilo koje strane
+                    if (dyna->checkCollision(*(bombs[i]->leftTile))
+                            || dyna->checkCollision(*(bombs[i]->rightTile))
+                            || dyna->checkCollision(*(bombs[i]->upTile))
+                            || dyna->checkCollision(*(bombs[i]->downTile))
+                            || dyna->checkCollision(bombs[i]->bombRect)) {
+                        dyna->lifeState=dying; //ukoliko jeste tada se menja stanje dyne u dying i odbrojava se promenljiva life
+                    };
+                    if (enemies.size()!= 0) {
+                        for (int i = 0; i < enemies.size(); i++) {//isto provera za svaki enemy da li ga je dodirnula bomba i unistila
+                            if (enemies[i]->checkCollision(*(bombs[i]->leftTile))
+                                    || enemies[i]->checkCollision(*(bombs[i]->rightTile))
+                                    || enemies[i]->checkCollision(*(bombs[i]->upTile))
+                                    || enemies[i]->checkCollision(*(bombs[i]->downTile))
+                                    || enemies[i]->checkCollision(bombs[i]->bombRect)) enemies[i]->enemyLifeState = dying;
+                        }
+                    }
+                };
 
-                } else bombs[i]->draw(renderer);
-                if (bombs[i]->expired) {
+                if (bombs[i]->expired) {//ukoliko je bomba eksplodirala prelazi u stanje expired i brise se iz memorije
                     bombs.erase(bombs.begin());
                     i--;
                 };
@@ -100,11 +123,15 @@ bool Engine::run() {
         if(frameEnd - frameStart < frameRateCap) {
             SDL_Delay(frameRateCap - (frameEnd - frameStart));
         };
-        if(dyna->checkCollision(enemy->spriteRect)) {
-            dyna->currentState=deadState;
-            cout << "game over" << endl;
-            counter++;
-        }
+        if (enemies.size()!= 0) {
+            for (int i = 0; i < enemies.size(); i++) { // za svakog enemyja iz liste proverava se sudar sa dynom
+                if(dyna->checkCollision(enemies[i]->spriteRect)) {
+                    dyna->lifeState=dying;
+                };
+            }
+        };// u slucaju da su unisteni svi enemyji i dyna je na polju koje je exit tada prelazi u win stanje i zavrsava se igrica
+        if (l->checkExitTile(dyna->spriteRect) && enemies.size() == 0) dyna->lifeState = win;
+
     }
     return true;
 }
