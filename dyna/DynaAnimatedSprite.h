@@ -7,20 +7,15 @@
 #include "Level.h"
 #include "AnimatedSprite.h"
 #include "EnemyAnimatedSprite.h"
-//#include "Bomb.h"
-
 
 using namespace std;
 
-
-enum MoveStates {leftState, rightState, upState, downState, stopState, deadState, winState};
+enum MoveStates {leftState, rightState, upState, downState, stopState};//moguca stanja kretanja
 
 class DynaAnimatedSprite : public AnimatedSprite {
 public:
-    //int getIdFromMatrix(int iMatrix, int jMatrix);
     uint32_t frameSkip = 7;
     Tile *nextTile = NULL;
-
     DynaAnimatedSprite(SDL_Renderer * const renderer);
     void draw(SDL_Renderer * const renderer);
     void move(Level *l, int dx, int dy);
@@ -28,10 +23,10 @@ public:
     virtual void right(Level *l);
     virtual void up(Level *l);
     virtual void down(Level *l);
-    //virtual bool checkCollision(SDL_Rect r);
 
     MoveStates currentState;
-    vector<SDL_Rect> currentStateFrames;
+    LifeState lifeState;
+    vector<SDL_Rect> currentStateFrames;//vektor sa frejmovima zavisno od trenutnog stanja AS
     uint32_t frameCount = 0;
     uint32_t currentFrame = 0;
 };

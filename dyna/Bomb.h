@@ -5,7 +5,6 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <vector>
-//#include "Tile.h"
 #include "Level.h"
 
 using namespace std;
@@ -21,7 +20,8 @@ public:
     vector<SDL_Rect> bombFrames;
     vector<SDL_Rect> fireFrames;
     vector<SDL_Rect> explosionFrames;
-   SDL_Rect *leftTile = new SDL_Rect{0,0, 32, 32};
+    //Tile-ovi okolo bombe
+    SDL_Rect *leftTile = new SDL_Rect{0,0, 32, 32};
     SDL_Rect *rightTile = new SDL_Rect{0,0, 32, 32};
     SDL_Rect *upTile = new SDL_Rect{0,0, 32, 32};
     SDL_Rect *downTile = new SDL_Rect{0,0, 32, 32};
@@ -35,8 +35,8 @@ public:
     int bombY;
     int currentTileJ;
     int currentTileI;
-    int countdown = 400;
-    int explosion = 100;
+    int countdown = 400;//brojac za otkucavanje bombe
+    int explosion = 100;//brojac za eksploziju i vatru
     bool expired = false;
     bool ticking = true;
     uint32_t frameSkip = 3;

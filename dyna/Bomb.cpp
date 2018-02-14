@@ -1,7 +1,7 @@
 #include "Bomb.h"
 
 Bomb::Bomb(SDL_Renderer *renderer, int x, int y) {
-    this->bombX = (x/32)*32;
+    this->bombX = (x/32)*32;//postavljanje bombe na osnovu koordinata Dyne pri cemu se postavlja tacno u okviru Tile-a
     this->bombY = (y/32)*32;
     SDL_Surface *bombSurface = IMG_Load("resources/creatures/bomb.png");
     bombRect.x = 0;
@@ -20,7 +20,6 @@ Bomb::Bomb(SDL_Renderer *renderer, int x, int y) {
         frame.x = i*32;
         frame.y = 0;
         bombFrames.push_back(frame);
-        //cout << bombFrames.size() << endl;
     };
     bombRect.w = 32;
     bombRect.h = 32;
@@ -43,7 +42,6 @@ Bomb::Bomb(SDL_Renderer *renderer, int x, int y) {
         frame.x = i*32;
         frame.y = 0;
         fireFrames.push_back(frame);
-        //cout << fireFrames.size() << endl;
     };
     fireRect.w = 32;
     fireRect.h = 32;
@@ -78,10 +76,9 @@ Bomb::~Bomb() {
 
 
 void Bomb::draw(SDL_Renderer *renderer) {
-    //cout << ticking<<endl;
     if (ticking) {
         if(countdown >= 0) {
-            bombRect.x = bombX;
+            bombRect.x = bombX;//iscrtavanje na osnovu koordinata gde je postavljena
             bombRect.y = bombY;
 
             SDL_RenderCopy(renderer, bombTexture, &bombFrames[currentFrame], &bombRect);
@@ -99,47 +96,53 @@ void Bomb::draw(SDL_Renderer *renderer) {
 }
 
 void Bomb::explode(Level *l, SDL_Renderer *renderer) {
+    //iscrtavanje eksplozije i provera za Tile sa svake strane
+    //ukoliko je Tile destroyable(wall) on se unistava i postavlja se grass Tile
 
-    if ((bombRect.y + bombRect.h > 32) && (currentTileI > 0)) {
-        int tId = l->levelMatrix[currentTileI-1][currentTileJ];
+    //Tile gore
+    if ((bombRect.y + bombRect.h > 32) && (currentTileI > 0)) {//u slucaju da se bomba ne nalazi na gornjoj ivici prozora
+        int tId = l->levelMatrix[currentTileI-1][currentTileJ];//pronadjem id iz matrice i proveravam da li je destroyable
         if (l->levelTiles[tId]->destroyable) {
-            l->levelMatrix[currentTileI-1][currentTileJ] = 1;
-            upTile->x = currentTileJ*32;
+            l->levelMatrix[currentTileI-1][currentTileJ] = 1;//postavljam novu vrednost Tile-a da je grass(1)
+            upTile->x = currentTileJ*32;//odredjujem koordinate Tile-a i prosledjujem ga kao destinaciju za renderovanje eksplozije
             upTile->y = (currentTileI-1)*32;
-            SDL_RenderCopy(renderer, fireTexture, &fireFrames[currentFrame], upTile);//gore
+            SDL_RenderCopy(renderer, fireTexture, &fireFrames[currentFrame], upTile);
         };
     };
+    //Tile desno
     if ((bombRect.x + bombRect.w < 352) && (currentTileJ < l->levelMatrix.size())) {
         int tId = l->levelMatrix[currentTileI][currentTileJ+1];
         if (l->levelTiles[tId]->destroyable) {
             l->levelMatrix[currentTileI][currentTileJ+1] = 1;
             rightTile->x = (currentTileJ+1)*32;
             rightTile->y = currentTileI*32;
-            SDL_RenderCopy(renderer, fireTexture, &fireFrames[currentFrame+4],rightTile);//desno
+            SDL_RenderCopy(renderer, fireTexture, &fireFrames[currentFrame+4],rightTile);
         };
     };
+    //Tile dole
     if ((bombRect.y + bombRect.h < 352) && (currentTileI < l->levelMatrix.size())) {
         int tId = l->levelMatrix[currentTileI+1][currentTileJ];
-        cout<<tId <<endl;
         if (l->levelTiles[tId]->destroyable) {
             l->levelMatrix[currentTileI+1][currentTileJ] = 1;
             downTile->x = currentTileJ*32;
             downTile->y = (currentTileI+1)*32;
-            SDL_RenderCopy(renderer, fireTexture, &fireFrames[currentFrame+8], downTile);//dole
+            SDL_RenderCopy(renderer, fireTexture, &fireFrames[currentFrame+8], downTile);
         };
     };
+    //Tile levo
     if ((bombRect.x + bombRect.w > 32) && (currentTileJ > 0)) {
         int tId = l->levelMatrix[currentTileI][currentTileJ-1];
         if (l->levelTiles[tId]->destroyable) {
             l->levelMatrix[currentTileI][currentTileJ-1] = 1;
             leftTile->x = (currentTileJ-1)*32;
             leftTile->y = currentTileI*32;
-            SDL_RenderCopy(renderer, fireTexture, &fireFrames[currentFrame+12], leftTile);//levo
+            SDL_RenderCopy(renderer, fireTexture, &fireFrames[currentFrame+12], leftTile);
         };
     };
+    //iscrtavanje u sredini bombe koje se uvek izvrsava
     SDL_RenderCopy(renderer, explosionTexture, &explosionFrames[currentFrame], &bombRect);
     frameCount++;
-    explosion--;
+    explosion--;//odbrojavanje eksplozije
     if(frameCount > frameSkip) {
         currentFrame++;
         if(currentFrame >= 4) {
@@ -147,7 +150,7 @@ void Bomb::explode(Level *l, SDL_Renderer *renderer) {
         }
         frameCount = 0;
     };
-    if (explosion<0) {
+    if (explosion<0) {//pri odbrojavanju se postavlja vrednost na expired i brise iz memorije
         expired = true;
         this->~Bomb();
     }
