@@ -22,7 +22,7 @@ public:
     SDL_Texture *texture;
 
 
-    void drawTile(SDL_Renderer *renderer, int id, int destX, int destY);
+    void drawTile(SDL_Renderer *renderer, int id, int destJ, int destI);
 };
 
 

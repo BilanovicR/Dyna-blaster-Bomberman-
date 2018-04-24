@@ -60,6 +60,7 @@ bool Level::checkExitTile(SDL_Rect other){
     //koje su preracunate u red i kolonu u matrici
     int otherI = other.y/32;
     int otherJ = other.x/32;
+    //provera da se ne izadje iz opsega matrice
 if (otherI < levelMatrix.size() && otherJ < levelMatrix.size() && otherI>=0 && otherJ >=0){
         //izlaz ima id=3
     if (levelMatrix[otherI][otherJ] == 3) return true;

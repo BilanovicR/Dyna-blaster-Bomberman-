@@ -19,10 +19,11 @@ Tile::Tile(SDL_Renderer * renderer, string tPath, int id, bool aWalkable, bool a
     SDL_FreeSurface(surface);
 }
 
-void Tile::drawTile(SDL_Renderer *renderer, int id, int destinationX, int destinationY) {
+void Tile::drawTile(SDL_Renderer *renderer, int id, int destinationJ, int destinationI) {
+    //dest.x i y se izracunavaju na osnovu prosledjenih i i j iz matrice
     SDL_Rect *dest = new SDL_Rect();
-    dest->x = destinationX * rect->h;
-    dest->y = destinationY * rect->w;
+    dest->x = destinationJ * rect->h;
+    dest->y = destinationI * rect->w;
     dest->h = rect->h;
     dest->w = rect->w;
     SDL_RenderCopy(renderer, texture, rect, dest);

@@ -39,9 +39,7 @@ void EnemyAnimatedSprite::draw(SDL_Renderer * const renderer) {
     if(frameCount > frameSkip) {
         //Prelazenje na sledeci frame.
         currentFrame++;
-        if(currentFrame >= 2) {//ogranicavanje frejmova koji treba da se iscrtavaju zavisno od stanja
-            //Kada se premasi broj frame-ova u slici, vraca se na pocetni
-            //frame i prelazi se na sledeci red frame-ova u slici.
+        if(currentFrame >= 2) {//frejmovi za iscrtavanje enemija dok je ziv su od 0 do 2
             currentFrame = 0;
         }
         frameCount = 0;
@@ -55,9 +53,7 @@ void EnemyAnimatedSprite::draw(SDL_Renderer * const renderer) {
     if(frameCount > frameSkip) {
         //Prelazenje na sledeci frame.
         currentFrame++;
-        if(currentFrame >= 8) {//ogranicavanje frejmova koji treba da se iscrtavaju zavisno od stanja
-            //Kada se premasi broj frame-ova u slici, vraca se na pocetni
-            //frame i prelazi se na sledeci red frame-ova u slici.
+        if(currentFrame >= 8) {//frejmovi za enemija kada umire su od 3.do 8.
             currentFrame = 3;
         }
         frameCount = 0;
@@ -67,7 +63,7 @@ void EnemyAnimatedSprite::draw(SDL_Renderer * const renderer) {
     }
 }
 
-void EnemyAnimatedSprite::move(Level *level, vector<Bomb*> b, int dX, int dY) {
+void EnemyAnimatedSprite::move(Level *level, vector<Bomb*> b) {
     //provera da li se na osnovu trenutnog stanja moze pomeriti na novu poziciju
     if(currentEnemyState == moveLeft) {
         if (canImove(level, b, -1, 0)) AnimatedSprite::left();
@@ -111,8 +107,11 @@ bool EnemyAnimatedSprite::canImove(Level *level,vector<Bomb*> b, int dX, int dY)
 
     if(!(topRightX < 30 || bottomRightY < 30 || topRightX >= 352 || bottomRightY >= 352)) {
     //provera da li je dozvoljeno kretanje na novu poziciju, odnosno da je nova pozicija dozvoljeni Tile i da nema bombu
-        if (level->checkWalkableTile(topLeftI, topLeftJ) && level->checkWalkableTile(bottomRightI, bottomRightJ)
-                && level->checkWalkableTile(topRightI, topRightJ) && level->checkWalkableTile(bottomLeftI, bottomLeftJ) && !checkBombCollision(b)) {
+        if (level->checkWalkableTile(topLeftI, topLeftJ)
+            && level->checkWalkableTile(bottomRightI, bottomRightJ)
+                && level->checkWalkableTile(topRightI, topRightJ)
+            && level->checkWalkableTile(bottomLeftI, bottomLeftJ)
+            && !checkBombCollision(b)) {
             return true;
         }
     }

@@ -22,8 +22,8 @@ bool Engine::run() {
     Level *l = new Level("resources/levels/level1.txt", renderer);
     if (l == NULL) cout << "greska pri pravljenju levela" << endl ;
 
-    vector<Bomb*> bombs;
-    vector<EnemyAnimatedSprite*> enemies;
+    vector<Bomb*> bombs; //vektor u koji se dodaju i brisu napravljene bombe
+    vector<EnemyAnimatedSprite*> enemies; //vektor sa enemijima, dodaju se i brisu
     enemies.push_back(enemy);
     bool running = true;
     SDL_Event event;
@@ -62,6 +62,7 @@ bool Engine::run() {
                 break;
             case SDL_KEYUP: // kada se otpusti dugme za kretanje dyna prelazi u stanje mirovanja
                 dyna->currentState = stopState;
+                break;
             }
         }
 
@@ -70,13 +71,14 @@ bool Engine::run() {
 
         //Iscrtavanje levela.
         l->draw(renderer);
-        if (dyna->lifeState != dead) dyna->draw(renderer);
+        //if (dyna->lifeState != dead)
+            dyna->draw(renderer);
 
         if (enemies.size()!= 0) {
             for (int i = 0; i <enemies.size(); i++) {
                 if (enemies[i]->enemyLifeState != dead) { //provera za svaki enemy da se iscrtava dok je u zivotu
                     enemies[i]->draw(renderer);
-                    enemies[i]->move(l, bombs, 0, 0);
+                    enemies[i]->move(l, bombs);
                 } else if (enemies[i]->enemyLifeState == dead) { //ukoliko mu je stanje = dead onda se brise iz memorije i vektora
                     delete enemies[i];
                     enemies.erase(enemies.begin());
@@ -87,7 +89,7 @@ bool Engine::run() {
 
         if (bombs.size()!=0) {
             for (int i =0; i<bombs.size(); i++) {
-                if (bombs[i]->ticking) bombs[i]->draw(renderer);//aka bomba dok otkucava se iscrtava
+                if (bombs[i]->ticking) bombs[i]->draw(renderer);//svaka bomba dok otkucava se iscrtava
                 else {
                     bombs[i]->explode(l, renderer); // u slucaju eksplozije provera da li je dodirnula dinu sa bilo koje strane
                     if (dyna->checkCollision(*(bombs[i]->leftTile))
@@ -129,7 +131,7 @@ bool Engine::run() {
                     dyna->lifeState=dying;
                 };
             }
-        };// u slucaju da su unisteni svi enemyji i dyna je na polju koje je exit tada prelazi u win stanje i zavrsava se igrica
+        };// u slucaju da su unisteni svi enemyji i dyna je na polju koje je exit, tada prelazi u win stanje i zavrsava se igrica
         if (l->checkExitTile(dyna->spriteRect) && enemies.size() == 0) dyna->lifeState = win;
 
     }
